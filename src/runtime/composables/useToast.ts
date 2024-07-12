@@ -1,4 +1,4 @@
-import type { Toast } from '../types/toast'
+import type { Toast, Status } from '../types/toast'
 import { useState } from '#imports'
 
 export function useToast() {
@@ -9,7 +9,7 @@ export function useToast() {
     toasts.value.splice(idx, 1)
   }
 
-  function add(toast: Partial<Toast>) {
+  function _add(toast: Partial<Toast>) {
     const id = new Date().getTime().toString()
 
     function close() {
@@ -23,31 +23,48 @@ export function useToast() {
     }
 
     toasts.value.push(body as Toast)
+
+    setTimeout(() => _remove(id), toast.timeout ?? 5000)
   }
 
-  function toast(title: string, description: string) {
-
+  function toast(toast: Partial<Toast>) {
+    _add(toast)
   }
 
   function info(title: string, description: string) {
     const body = {
       title,
       description,
-      timeout: 3000,
+      status: 'info' as Status,
     }
-    add(body)
+    _add(body)
   }
 
   function success(title: string, description: string) {
-
+    const body = {
+      title,
+      description,
+      status: 'success' as Status,
+    }
+    _add(body)
   }
 
   function warning(title: string, description: string) {
-
+    const body = {
+      title,
+      description,
+      status: 'warning' as Status,
+    }
+    _add(body)
   }
 
   function error(title: string, description: string) {
-
+    const body = {
+      title,
+      description,
+      status: 'error' as Status,
+    }
+    _add(body)
   }
 
   return {

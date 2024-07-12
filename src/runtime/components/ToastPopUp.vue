@@ -5,15 +5,6 @@ interface Props {
   toast: Toast
 }
 
-enum Status {
-  Success = 'success',
-  Warning = 'warning',
-  Danger = 'danger',
-  Info = 'info',
-}
-
-const status = Status.Success
-
 const { toast } = defineProps<Props>()
 </script>
 
@@ -24,7 +15,7 @@ const { toast } = defineProps<Props>()
     :style="{ opacity: `${toast.opacity ?? 100}%` }"
     role="alert"
   >
-    <template v-if="status == Status.Success">
+    <template v-if="toast.status === 'success'">
       <div
         class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200"
       >
@@ -42,7 +33,7 @@ const { toast } = defineProps<Props>()
         <span class="sr-only">Check icon</span>
       </div>
     </template>
-    <template v-else-if="status == Status.Warning">
+    <template v-else-if="toast.status === 'warning'">
       <div
         class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg dark:bg-orange-700 dark:text-orange-200"
       >
@@ -60,7 +51,7 @@ const { toast } = defineProps<Props>()
         <span class="sr-only">Warning icon</span>
       </div>
     </template>
-    <template v-else-if="status == Status.Danger">
+    <template v-else-if="toast.status === 'error'">
       <div
         class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200"
       >
