@@ -7,7 +7,16 @@ module.exports = {
     './playground/plugins/**/*.{js,ts}',
     './playground/app.vue',
     './playground/error.vue',
+
+    // TODO: find a way to work around this
+    './src/runtime/components/**/*.{js,vue,ts}',
+    './src/runtime/layouts/**/*.vue',
+    './src/runtime/pages/**/*.vue',
+    './src/runtime/plugins/**/*.{js,ts}',
+    './src/runtime/app.vue',
+    './src/runtime/error.vue',
   ],
+  // darkMode: ['selector'],
   theme: {
     extend: {},
   },
