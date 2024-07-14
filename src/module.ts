@@ -1,4 +1,4 @@
-import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, addImportsDir } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addComponentsDir, addImportsDir } from '@nuxt/kit'
 import installTailwind from './tailwind'
 
 // Module options TypeScript interface definition
@@ -6,8 +6,8 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule',
+    name: '@anthocodes99/nuxt-toast',
+    configKey: 'toast',
   },
   // Default configuration options of the Nuxt module
   defaults: {},
@@ -22,7 +22,6 @@ export default defineNuxtModule<ModuleOptions>({
     await installTailwind(_options, _nuxt, resolve)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolve('./runtime/plugin'))
     addComponentsDir({
       path: resolve(runtimeDir, 'components'),
     })
