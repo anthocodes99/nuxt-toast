@@ -1,7 +1,7 @@
 {
   "name": "nuxt-toast",
-  "version": "1.0.0",
-  "description": "toasts for nuxt",
+  "version": "0.1.0",
+  "description": "Toasts for nuxt",
   "repository": "anthocodes99/nuxt-toast",
   "license": "MIT",
   "type": "module",
@@ -30,7 +30,10 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.12.3",
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "autoprefixer": "^10.4.19",
+    "defu": "^6.1.4",
+    "pathe": "^1.1.2",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4"
   },
