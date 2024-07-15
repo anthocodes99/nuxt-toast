@@ -7,6 +7,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  myModule: {},
+  toast: {
+    tailwindcss: true,
+  },
+  tailwindcss: {
+    // tailwindcss related config goes here
+  },
   devtools: { enabled: true },
 })
