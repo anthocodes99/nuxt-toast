@@ -32,6 +32,7 @@
     "@nuxt/kit": "^3.12.3",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "autoprefixer": "^10.4.19",
+    "consola": "^3.2.3",
     "defu": "^6.1.4",
     "pathe": "^1.1.2",
     "postcss": "^8.4.39",
