@@ -4,7 +4,16 @@ import installTailwind from './tailwind'
 import logger from './logger'
 
 // Module options TypeScript interface definition
-export interface ModuleOptions {}
+export interface ModuleOptions {
+  /**
+   *
+   * Whether or not to use Tailwind CSS
+   *
+   * @default true
+   * @NYI Not Yet Implemented - must use Tailwind CSS
+   */
+  tailwindcss: boolean
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -13,7 +22,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    tailwindcss: 'true',
+    tailwindcss: true,
   },
   async setup(_options, _nuxt) {
     const { resolve } = createResolver(import.meta.url)
