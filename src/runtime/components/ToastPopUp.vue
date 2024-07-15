@@ -11,7 +11,7 @@ const { toast } = defineProps<Props>()
 <template>
   <div
     id="toast-default"
-    class="flex items-center w-full max-w-xs p-4 mt-2 text-gray-500 bg-white rounded-lg shadow dark:text-slate-200 dark:bg-gray-800 dark:border dark:border-gray-600 dark:shadow-lg transition ease-in-out duration-100"
+    class="flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-slate-200 dark:bg-gray-800 dark:border dark:border-gray-600 dark:shadow-lg transition ease-in-out duration-100"
     :style="{ opacity: `${toast.opacity ?? 100}%` }"
     role="alert"
   >

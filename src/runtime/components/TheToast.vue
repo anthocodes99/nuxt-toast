@@ -8,9 +8,10 @@ const toasts = computed(() => toast.state.value)
 </script>
 
 <template>
-  <div class="fixed bottom-5 lg:top-5 right-5 h-32">
+  <div class="fixed lg:top-5 right-5">
     <TransitionGroup
       name="fade"
+      class="flex flex-col gap-2 w-64"
       tag="div"
     >
       <ToastPopUp
@@ -39,9 +40,5 @@ const toasts = computed(() => toast.state.value)
 .fade-leave-to {
   opacity: 0;
   transform: translateX(100%);
-}
-
-.fade-leave-active {
-  position: absolute;
 }
 </style>
