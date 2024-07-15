@@ -41,7 +41,7 @@ useSeoMeta({
       </button>
       <button
         class="px-8 py-4 rounded-md bg-gray-700 text-white hover:bg-gray-600 transition duration-100"
-        @click="toast.error('damn', 'something broke')"
+        @click="toast.error('damn', 'something brokejqw ioecjiqowecji oqwjecioq jioecq jwoie')"
       >
         Error
       </button>
